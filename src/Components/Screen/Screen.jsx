@@ -4,7 +4,8 @@ class Screen extends React.Component {
   render() {
     return (
       <>
-        Screen
+        {this.props.value}
+        {this.props.result}
       </>
     )
   }
