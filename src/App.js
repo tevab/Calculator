@@ -1,7 +1,11 @@
+import Buttons from "./Components/Buttons/Buttons";
+import Screen from "./Components/Screen/Screen";
+
 function App() {
   return (
     <div className="App">
-      Hiush
+      <Screen/>
+      <Buttons/>
     </div>
   );
 }
