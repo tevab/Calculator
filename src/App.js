@@ -6,7 +6,7 @@ function App() {
   const [calc, setCalc] = useState('');
   const [result, setResult] = useState('');
 
-  const operators = ['/', 'x', '+', '-', '.'];
+  const operators = ['/', '*', '+', '-', '.'];
 
   const updateCalc = value => {
     if (operators.includes(value) && calc === '' || operators.includes(value) && operators.includes(calc.slice(-1))) {
@@ -21,20 +21,26 @@ function App() {
 
   const calculate = () => {
     setCalc(eval(calc));
+    setResult('');
   };
 
   const deleteLast = () => {
     if (calc == '') {
       return;
-    };
-    const value = calc.slice(0, -1);
-    setCalc(value);
+    } else if (result == '') {
+      setCalc('');
+      setResult('');
+    } else {
+      const value = calc.slice(0, -1);
+      setCalc(value);
+      setResult(value);
+    }
   };
 
   return (
     <div className="App">
       <Screen value={calc || '0'} result={result? <span>({result})</span> : ''}/>
-      <Buttons updateCalc={updateCalc} calculate={calculate} deleteLast={deleteLast}/>
+      <Buttons updateCalc={updateCalc} calculate={calculate} deleteLast={deleteLast} result={result}/>
     </div>
   );
 };

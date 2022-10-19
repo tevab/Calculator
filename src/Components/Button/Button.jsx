@@ -12,7 +12,7 @@ function Button(props) {
     };
 
     return (
-        <button onClick={handleClick}>{props.text}</button>
+        <button onClick={handleClick}>{props.displayText? props.displayText : props.text}</button>
     );
   }
 

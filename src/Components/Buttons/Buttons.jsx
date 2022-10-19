@@ -15,14 +15,14 @@ function Buttons(props) {
 
   return (
     <div>
-      <Button text="+" updateCalc={props.updateCalc}/>
-      <Button text="-" updateCalc={props.updateCalc}/>
-      <Button text="x" updateCalc={props.updateCalc}/>
-      <Button text="/" updateCalc={props.updateCalc}/>
-      <Button text="." updateCalc={props.updateCalc}/>
-      <Button text="=" calculate={props.calculate}/>
-      <Button text="DEL" deleteLast={props.deleteLast}/>
-      <Button text="0" updateCalc={props.updateCalc}/>
+      <Button text='+' updateCalc={props.updateCalc}/>
+      <Button text='-' updateCalc={props.updateCalc}/>
+      <Button text='*' updateCalc={props.updateCalc} displayText='X'/>
+      <Button text='/' updateCalc={props.updateCalc}/>
+      <Button text='.' updateCalc={props.updateCalc}/>
+      <Button text='=' calculate={props.calculate}/>
+      <Button text={props.result == '' ? 'Clear' : 'Delete'} deleteLast={props.deleteLast}/>
+      <Button text='0' updateCalc={props.updateCalc}/>
       {getDigits()}
     </div>
   );
