@@ -3,6 +3,14 @@ import Button from '../Button/Button';
 
 function Buttons(props) {
 
+  const getOperators = () => {
+    
+   
+    return operators;
+  };
+
+  const operators = props.operators;
+
   const getDigits = () => {
     const digits = [];
     for (let i = 1; i < 10; i++) {
@@ -15,14 +23,10 @@ function Buttons(props) {
 
   return (
     <div>
-      <Button text='+' updateCalc={props.updateCalc}/>
-      <Button text='-' updateCalc={props.updateCalc}/>
-      <Button text='*' updateCalc={props.updateCalc} displayText='X'/>
-      <Button text='/' updateCalc={props.updateCalc}/>
-      <Button text='.' updateCalc={props.updateCalc}/>
-      <Button text='=' calculate={props.calculate}/>
-      <Button text={props.result == '' ? 'Clear' : 'Delete'} deleteLast={props.deleteLast}/>
+      <Button text='=' calculate={props.calculate}/> 
+      <Button text={props.result === '' ? 'Clear' : 'Delete'} deleteLast={props.deleteLast}/>
       <Button text='0' updateCalc={props.updateCalc}/>
+      {operators.map((operator, i) => (<Button key={i} text={operator} updateCalc={props.updateCalc} />))}
       {getDigits()}
     </div>
   );
