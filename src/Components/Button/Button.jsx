@@ -22,6 +22,9 @@ const StyledButton = styled.button`
     &:hover {
         background-color: ${props => props.digit ? '#0a152b' : '#3c3449'};
     }
+    &:disabled {
+        opacity: 0.7;
+    }
     @media only screen and (max-width: 450px) {
         width: 60px;
         height: 60px;
@@ -43,7 +46,12 @@ function Button(props) {
     };
 
     return (
-        <StyledButton onClick={handleClick} digit={props.digit} text={props.text}>
+        <StyledButton 
+            onClick={handleClick} 
+            digit={props.digit} 
+            text={props.text} 
+            disabled={props.finalResult || props.result === '' ? true : false}
+        >
             {/* If the button's text is `*` replace it with `X` */}
             {props.text === '*' ? 'X' : props.text}
         </StyledButton>

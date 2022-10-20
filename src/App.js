@@ -55,7 +55,9 @@ function App() {
   // Replace all `*` with `X`
   useEffect(() => {
     let screenValue = document.getElementById('screen-value').innerHTML;
-    document.getElementById('screen-value').innerHTML = screenValue.replaceAll('*', 'X');
+    document.getElementById('screen-value').innerHTML = screenValue.replaceAll(
+      '*', `<span style="font-size: 18px; vertical-align: middle; font-weight: 500;">X</span>`
+    );
   });
 
   return (
@@ -68,6 +70,7 @@ function App() {
         deleteLast={deleteLast} 
         result={result} 
         operators={operators}
+        finalResult={finalResult}
       />
     </div>
   );

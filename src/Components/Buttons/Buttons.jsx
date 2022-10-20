@@ -69,7 +69,7 @@ function Buttons(props) {
     // create 10 buttons with value from 0 to 10
     for (let i = 0; i < 10; i++) {
       digits.push(
-        <Button key={i} text={i} updateCalc={props.updateCalc} digit />
+        <Button key={i} text={i} updateCalc={props.updateCalc} finalResult={props.finalResult} digit />
       )
     };
     return digits;
@@ -79,11 +79,13 @@ function Buttons(props) {
     <Wrapper>
       {/* Create a button for each operator */}
       <OperatorsWrapper id="operators">
-        {operators.map((operator, i) => (<Button 
-          key={i} 
-          text={operator} 
-          updateCalc={props.updateCalc} 
-        />))}
+        {operators.map((operator, i) => (
+          <Button 
+            key={i} 
+            text={operator} 
+            updateCalc={props.updateCalc} 
+            finalResult={props.finalResult}
+          />))}
       </OperatorsWrapper>
       <MainButtonswrapper>
         {/* Display digit buttons */}
@@ -99,7 +101,11 @@ function Buttons(props) {
           flexWrap: 'wrap',
         }}>
           {/* Calculate button */}
-          <Button text='=' calculate={props.calculate}/> 
+          <Button text='=' 
+            calculate={props.calculate} 
+            finalResult={props.finalResult}
+            result={props.result}
+          /> 
           {/* Delete button */}
           <Button
             // If the interim results are empty show `C`, otherwise show `DEL`
