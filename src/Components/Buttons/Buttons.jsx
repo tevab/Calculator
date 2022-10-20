@@ -3,12 +3,6 @@ import Button from '../Button/Button';
 
 function Buttons(props) {
 
-  const getOperators = () => {
-    
-   
-    return operators;
-  };
-
   const operators = props.operators;
 
   const getDigits = () => {

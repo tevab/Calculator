@@ -4,7 +4,9 @@ class Screen extends React.Component {
   render() {
     return (
       <>
-        {this.props.value}
+        <span id="screen-value">
+            {this.props.value}
+        </span>
         {this.props.result}
       </>
     )

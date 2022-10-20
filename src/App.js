@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Buttons from "./Components/Buttons/Buttons";
 import Screen from "./Components/Screen/Screen";
 
@@ -41,6 +41,11 @@ function App() {
       setResult(value);
     }
   };
+
+  useEffect(() => {
+    let screenValue = document.getElementById('screen-value').innerHTML;
+    document.getElementById('screen-value').innerHTML = screenValue.replaceAll('*', 'X');
+  });
 
   return (
     <div className="App">
