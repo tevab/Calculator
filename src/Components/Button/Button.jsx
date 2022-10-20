@@ -50,7 +50,7 @@ function Button(props) {
             onClick={handleClick} 
             digit={props.digit} 
             text={props.text} 
-            disabled={props.finalResult || props.result === '' ? true : false}
+            disabled={props.finalResult || props.result === '' || props.disabledClear ? true : false}
         >
             {/* If the button's text is `*` replace it with `X` */}
             {props.text === '*' ? 'X' : props.text}

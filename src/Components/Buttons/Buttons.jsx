@@ -85,6 +85,7 @@ function Buttons(props) {
             text={operator} 
             updateCalc={props.updateCalc} 
             finalResult={props.finalResult}
+            result={props.result}
           />))}
       </OperatorsWrapper>
       <MainButtonswrapper>
@@ -111,6 +112,7 @@ function Buttons(props) {
             // If the interim results are empty show `C`, otherwise show `DEL`
             text={props.result === '' ? 'C' : 'DEL'} 
             deleteLast={props.deleteLast}
+            disabledClear={!props.result && !props.finalResult ? true : false}
           />
         </div>
       </MainButtonswrapper>
