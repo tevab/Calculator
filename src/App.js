@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Buttons from "./Components/Buttons/Buttons";
-import Screen from "./Components/Screen/Screen";
+import React, { useState, useEffect } from 'react';
+import GlobalStyle from './Theme/globalStyle';
+import CalculatorWrapper from './Components/CalculatorWrapper/CalculatorWrapper';
 
 function App() {
   // Update the value screen on buttons tap
@@ -60,13 +60,9 @@ function App() {
 
   return (
     <div className="App">
-      <Screen 
-        // Show the buttons that were tapped or show `0`
-        value={calc || '0'} 
-        // Show the interim results of the buttons tapped or show nothing
-        result={result? <span>({result})</span> : ''}
-      />
-      <Buttons 
+      <GlobalStyle />
+      <CalculatorWrapper 
+        calc={calc}
         updateCalc={updateCalc} 
         calculate={calculate} 
         deleteLast={deleteLast} 

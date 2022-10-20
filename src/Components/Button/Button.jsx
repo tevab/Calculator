@@ -1,4 +1,32 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+    background-color: ${props => props.digit ? '#0e1f40' : '#504561'};
+    color: #f1f1f1;
+    font-family: 'Ubuntu', Arial;
+    font-weight: 700;
+    font-size: 20px;
+    border: 0;
+    border-radius: ${props => props.digit ? '50%' : '22px'};
+    padding: 16px;
+    min-width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    transition: 400ms all ease-in-out;
+    flex-grow: ${props => props.text === '=' ? 1 : 0};
+    position: relative;
+    &:hover {
+        background-color: ${props => props.digit ? '#0a152b' : '#3c3449'};
+    }
+    @media only screen and (max-width: 450px) {
+        width: 60px;
+        height: 60px;
+    }
+`;
 
 function Button(props) {
     const handleClick = () => {
@@ -15,10 +43,10 @@ function Button(props) {
     };
 
     return (
-        <button onClick={handleClick}>
+        <StyledButton onClick={handleClick} digit={props.digit} text={props.text}>
             {/* If the button's text is `*` replace it with `X` */}
             {props.text === '*' ? 'X' : props.text}
-        </button>
+        </StyledButton>
     );
   }
 
