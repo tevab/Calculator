@@ -112,6 +112,7 @@ function Buttons(props) {
             // If the interim results are empty show `C`, otherwise show `DEL`
             text={props.result === '' ? 'C' : 'DEL'} 
             deleteLast={props.deleteLast}
+            // If the calculator doesnt show interim results but still not showing a final result disable the button
             disabledClear={!props.result && !props.finalResult ? true : false}
           />
         </div>
