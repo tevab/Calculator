@@ -19,6 +19,7 @@ const StyledButton = styled.button`
     transition: 400ms all ease-in-out;
     flex-grow: ${props => props.text === '=' ? 1 : 0};
     position: relative;
+    cursor: pointer;
     &:hover {
         background-color: ${props => props.digit ? '#0a152b' : '#3c3449'};
     }
