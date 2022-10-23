@@ -30,9 +30,14 @@ function App() {
 
   // Show the final result on the scree and remove the interim results
   const calculate = () => {
-    setCalc(eval(calc));
-    setResult('');
-    setFinalResult(true);
+    try {
+      setCalc(eval(calc));
+      setResult('');
+      setFinalResult(true);
+    }
+    catch {
+      console.log(`Can't process command`);
+    }
   };
 
   const deleteLast = () => {
