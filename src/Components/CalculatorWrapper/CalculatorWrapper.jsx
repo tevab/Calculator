@@ -38,6 +38,7 @@ function CalculatorWrapper(props) {
                 result={props.result} 
                 operators={props.operators}
                 finalResult={props.finalResult}
+                calc={props.calc}
             />
         </ Wrapper>
     )

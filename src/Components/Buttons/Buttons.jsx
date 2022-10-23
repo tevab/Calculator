@@ -69,7 +69,14 @@ function Buttons(props) {
     // create 10 buttons with value from 0 to 10
     for (let i = 0; i < 10; i++) {
       digits.push(
-        <Button key={i} text={i} updateCalc={props.updateCalc} finalResult={props.finalResult} digit />
+        <Button 
+          key={i} 
+          text={i} 
+          updateCalc={props.updateCalc} 
+          finalResult={props.finalResult} 
+          result={props.result}
+          digit 
+        />
       )
     };
     return digits;
