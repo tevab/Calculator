@@ -22,7 +22,7 @@ function App() {
     // Add commands from the buttons tapped
     setCalc(calc + value);
 
-    // If the last value wans't an operator - calculate the commands on the screen
+    // If the last value wasn't an operator - calculate the commands on the screen
     if (!operators.includes(value)) {
       setResult(eval(calc + value));
     };

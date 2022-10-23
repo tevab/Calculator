@@ -25,6 +25,10 @@ const StyledButton = styled.button`
     }
     &:disabled {
         opacity: 0.7;
+        &:hover {
+            background-color: ${props => props.digit ? '#0e1f40' : '#504561'};
+            cursor: auto;
+        }
     }
     @media only screen and (max-width: 450px) {
         width: 60px;
